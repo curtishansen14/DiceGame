@@ -1,5 +1,20 @@
 "use strict"
 
+function crootArrays(){
+	let ronDayne = [0,1.2,1.2,1.2.0]
+	let russelWilson = [1.2,0,1.2,0,1.2]
+	let monteeBall = [0,1.2,0,1.2,1.2]
+	let nickToon = [0,0,1.2,1.2,.12,]
+	let jackCichy = [1.2,0,0,1.2,1.2]
+	let billNagy = [1.2,0,0,1.2,1.2]
+}
+
+function distanceArray(){
+	let homeGrown = 5
+	let regional = 2
+	let national = 0 
+}
+
 function rollDice(message) {
 	let sidesOnDie = prompt("Please Enter Sides On Die");
 	let roll = Math.floor(Math.random() * sidesOnDie) + 1;
@@ -7,17 +22,6 @@ function rollDice(message) {
 	return roll
 }
 
-//rollDice()
-
-// function run(){
-// 	let abilityRoll = rollDice();
-// 	console.log(firstRoll)
-// 	let personalityRoll = rollDice();
-// 	console.log(secondRoll)
-// 	let DistanceRoll = rollDice();
-
-// }
-// run();
 
 function playersAbilityDisplay(abilityRoll){  // Save the output so I can use it later
 	let roll = rollDice();
@@ -29,13 +33,15 @@ function playersAbilityDisplay(abilityRoll){  // Save the output so I can use it
 
 function humanElement(humanElement){ // consider alerts over consolelogs to pause
 	let roll = rollDice();
-	if (roll = 1 ) {"Ron Dayne"} // {"History Championships Academics"} 
-	else if (roll = 2){"Russel Wilson"} // {"Campus, Academics, Play"}
-	else if (roll = 3){"Montee Ball"} //{"Championships Campus History" }
-	else if (roll = 4){"Jonathan Taylor"} // {"Campus Academics History" }
-	else if (roll = 5){"Jack Cichy"} // {"Play Campus History"}
-	else {"Bill Nagy"} // {"Campus Play History"}	
+	if (roll = 1 ) {"Ron Dayne"} 
+	else if (roll = 2){"Russel Wilson"} 
+	else if (roll = 3){"Montee Ball"} 
+	else if (roll = 4){"Nick Toon"} 
+	else if (roll = 5){"Jack Cichy"} 
+	else {"Bill Nagy"} 	
 }
+
+
 
 
 function distance(){
@@ -46,8 +52,4 @@ function distance(){
 
 }
 
-// for multiplying arrays
-// var sum = 0;
-// for(var i=0; i< arr1.length; i++) {
-//     sum += arr1[i]*arr2[i];
 
