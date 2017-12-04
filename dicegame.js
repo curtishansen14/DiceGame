@@ -1,18 +1,17 @@
 "use strict"
 
-function crootArrays(){
-	let ronDayne = [0,1.2,1.2,1.2.0]
-	let russelWilson = [1.2,0,1.2,0,1.2]
-	let monteeBall = [0,1.2,0,1.2,1.2]
-	let nickToon = [0,0,1.2,1.2,.12,]
-	let jackCichy = [1.2,0,0,1.2,1.2]
-	let billNagy = [1.2,0,0,1.2,1.2]
-}
+let ronDayne = [0,1.2,1.2,1.2.0]
+let russelWilson = [1.2,0,1.2,0,1.2]
+let monteeBall = [0,1.2,0,1.2,1.2]
+let nickToon = [0,0,1.2,1.2,.12,]
+let jackCichy = [1.2,0,0,1.2,1.2]
+let billNagy = [1.2,0,0,1.2,1.2]
 
-function distanceArray(){
-	let homeGrown = 5
-	let regional = 2
-	let national = 0 
+
+let homeGrown = 10
+let regional = 4
+let national = 0
+
 }
 
 function rollDice(message) {
@@ -53,3 +52,34 @@ function distance(){
 }
 
 
+function rollforCroot() {
+	let crootRoll = Math.floor(Math.random() * 7) + 1;
+	return crootRoll
+}
+
+function rollforTalent(){
+	let talentRoll = Math.floor(Math.random() * 21) + 1;
+	return talentRoll
+}
+
+function rollforDistance(){
+	let distanceRoll = Math.floor(Math.random() * 21) + 1;
+	return distanceRoll
+}
+
+function getCroot(){ //Display Distance
+	let roll = rollforCroot()
+		if (roll = 1) {return ronDayne}
+		else if (roll = 2) { return russelWilson}
+		else if (roll = 3) { return monteeBall}
+		else if (roll = 4) { return nickToon}
+		else if (roll = 5) { return jackCichy}
+		else if (roll = 6) { return billNagy}
+}
+
+function getDistance(){ //Display Distance
+	let location = rollforDistance()
+	if      (location <= 2) {console.log(HomeGrown) return homeGrown}
+	else if (location = 3)  {console.log(Regional) return regional}
+	else if	(location = 4)  {console.log(National) return national}
+}

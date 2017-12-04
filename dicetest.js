@@ -14,12 +14,58 @@
 // for(var i=0; i< arr1.length; i++) {
 //     sum += arr1[i]*arr2[i];
 
-function rollDice(message) {
-	let sidesOnDie = prompt("Please Enter Sides On Die");
-	let roll = Math.floor(Math.random() * sidesOnDie) + 1;
-	console.log(roll);
-	return roll
+
+let ronDayne = [0,1.2,1.2,1.2.0]
+let russelWilson = [1.2,0,1.2,0,1.2]
+let monteeBall = [0,1.2,0,1.2,1.2]
+let nickToon = [0,0,1.2,1.2,.12,]
+let jackCichy = [1.2,0,0,1.2,1.2]
+let billNagy = [1.2,0,0,1.2,1.2]
+
+let homeGrown = 5
+let regional = 2
+let national = 0 
+
+let playtime = [1,0,0,0,0]
+let championships = [0,1,0,0,0]
+let academics = [0,0,1,0,0]
+let history = [0,0,0,1,0]
+let campus = [0,0,0,0,1] 
+
+let totaalscore =[]
+
+function getUserInput(message){
+	let userinput = prompt(message);
+	return userinput;
 }
+
+
+function rollforCroot() {
+	let crootRoll = Math.floor(Math.random() * 7) + 1;
+	return crootRoll
+}
+
+function rollforTalent(){
+	let talentRoll = Math.floor(Math.random() * 21) + 1;
+	return talentRoll
+}
+
+function rollforDistance(){
+	let distanceRoll = Math.floor(Math.random() * 21) + 1;
+	return distanceRoll
+}
+
+function talent(){
+	let roll = rollforTalent();
+	let FiveStar  = 0
+	let FourStar  = 5 
+	let ThreeStar = 10
+	if (roll >= 19) { console.log("5 Star");}
+	else if (roll < 11 ) {console.log ("3 Star");}
+	else {console.log ("4 Star");}
+
+}
+
 
 // function Crootmultiplier(){
 // let arr1 = [4,0,0,0,0]
@@ -70,7 +116,44 @@ function rollDice(message) {
 // function multiplyByRoll(){
 // 	crootArrays()
 // }
+function humanElement(){
+	let roll = rollDice();
+	if (roll = 1 ) {ronDayne} 
+	else if (roll = 2){russelWilson} 
+	else if (roll = 3){monteeBall} 
+	else if (roll = 4){nickToon} 
+	else if (roll = 5){jackCichy} 
+	else {billNagy} 	
+}
 
-function pitchByCroot(){
-	
+
+function pitchPlayTime(){
+	let playtime = [1,0,0,0,0]
+	let croot = humanElement()
+}
+
+function TotalScore(){
+let ronDayne = [0,1.2,1.2,1.2.0]
+let russelWilson = [1.2,0,1.2,0,1.2]
+let monteeBall = [0,1.2,0,1.2,1.2]
+let nickToon = [0,0,1.2,1.2,.12,]
+let jackCichy = [1.2,0,0,1.2,1.2]
+let billNagy = [1.2,0,0,1.2,1.2]
+
+let homeGrown = 5
+let regional = 2
+let national = 0 
+
+let playtime = [1,0,0,0,0]
+let championships = [0,1,0,0,0]
+let academics = [0,0,1,0,0]
+let history = [0,0,0,1,0]
+let campus = [0,0,0,0,1]
+
+
+function Totalscore2(){
+let Score = [pitch1(), pitch2(), pitch3(), distance(), talent()]
+
+Score.reduce()  
+
 }
