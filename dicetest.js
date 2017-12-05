@@ -355,19 +355,70 @@ function rollDice(sidesOnDie) {
 function pitchPlaytime(){
 	let roll = rollDice(12);
 	let playtimeArray = [1,0,0,0,0];
-	let pitchEffect;
-	let finalResult = 0;
+	let playtimeResult = 0;
 
 	for(let i = 0; i < playtimeArray.length; i++) {
 		playtimeArray[i] *= roll;
 		playtimeArray[i] *= croot[i];
 		playtimeArray[i] += roll;
-		finalResult += playtimeArray[i];
-
+		platimeResult += playtimeArray[i];
 	}
-
-
-
+return playtimeResult
 }
- // 
-pitchPlaytime()
+
+
+function pitchChampionships(){
+	let roll = rollDice(12);
+	let championshipsArray = [0,1,0,0,0];
+	let championshipResult = 0;
+
+	for(let i = 0; i < championshipsArray.length; i++) {
+		championshipsArray[i] *= roll;
+		championshipsArray[i] *= croot[i];
+		championshipsArray[i] += roll;
+		championshipsResult += championshipsArray[i];
+	}
+return championshipResult
+}
+
+function pitchAcademics(){
+	let roll = rollDice(10);
+	let academicsArray = [0,0,1,0,0];
+	let playtimeResult = 0;
+
+	for(let i = 0; i < academicsArray.length; i++) {
+		academicsArray[i] *= roll;
+		academicsArray[i] *= croot[i];
+		academicsArray[i] += roll;
+		academicsResult += academicsArray[i];
+	}
+return academicsResult
+}
+
+function pitchHistory(){
+	let roll = rollDice(10);
+	let historyArray = [0,0,0,1,0];
+	let historyResult = 0;
+
+	for(let i = 0; i < historyArray.length; i++) {
+		historyArray[i] *= roll;
+		historyArray[i] *= croot[i];
+		historyArray[i] += roll;
+		historyResult += historyArray[i];
+	}
+return historyResult
+}
+
+function pitchCampus(){
+	let roll = rollDice(8);
+	let campusArray = [0,0,0,0,1];
+	let campusResult = 0;
+
+	for(let i = 0; i < campusArray.length; i++) {
+		campusArray[i] *= roll;
+		campusArray[i] *= croot[i];
+		campusArray[i] += roll;
+		campusResult += campusArray[i];
+	}
+return campusResult
+}
