@@ -185,7 +185,7 @@
 
 let FiveStar = 0
 let FourStar = 5
-let ThreeStar = 10
+let ThreeStar = 15
 
 // function rollforTalent(){
 // 	let talentRoll = Math.floor(Math.random() * 21) + 1;
@@ -213,39 +213,161 @@ let ThreeStar = 10
 // console.log(getTalent())
 
 
-let homeGrown = 10
-let regional = 4
-let national = 0
+
+// let initialRolls = [];
+// let croot = getCroot();
+
+// function rollDice(sidesOnDie) {
+// 	let roll = Math.floor(Math.random() * sidesOnDie) + 1;
+// 	console.log(roll);
+// 	return roll
+// }
+
+
+
+// function getDistance(initialRolls){
+// 	let homeGrown = 12
+// 	let regional = 4
+// 	let national = 0
+
+
+// 	let distance;
+// 	let roll = rollDice(4)
+// 	console.log(roll)
+// 	if      (roll <= 2)
+// 	{ 
+// 				distance = homeGrown 
+// 					alert("Your 'croot is Home Grown!");
+// 	}
+// 	else if (roll === 3)
+// 	{
+// 				distance = regional
+// 					alert("Your 'croot is Regional!");
+// 	}
+// 	else if (roll === 4)
+// 	{
+// 				distance = national
+// 					alert("Your 'croot is National!");
+// 	}
+// 	initialRolls.push(distance)
+// }
+
+
+// function getTalent(initialRolls){
+// 	let FiveStar = 0
+// 	let FourStar = 5
+// 	let ThreeStar = 10
+
+
+// 	let talent;
+// 	let roll = rollDice(20);
+// 	console.log(roll)
+// 	if      (roll >= 19)
+// 	{ 
+// 				talent = FiveStar;
+// 	 			alert("Your 'croot is 5 Star");
+// 	 		}
+// 	else if (roll < 11 ) 
+// 	{ 
+// 				talent = ThreeStar;	
+// 				alert("Your 'croot is 3 Star");
+// 			}
+// 	else    
+// 				{talent = FourStar;
+// 				alert ("Your 'croot is 4 Star");
+// 			}
+// 		initialRolls.push(talent)
+// 		}
+
+
+function getCroot(){ 
+	let ronDayne = [0,1.2,1.2,1.2,0]
+	let russellWilson = [1.2,0,1.2,0,1.2]
+	let monteeBall = [0,1.2,0,1.2,1.2]
+	let nickToon = [0,0,1.2,1.2, 1.2,]
+	let jackCichy = [1.2,0,0,1.2,1.2]
+	let billNagy = [1.2,0,0,1.2,1.2]
+
+	let recruit;
+
+	let roll = rollDice(6)
+		switch (roll){
+			
+			case 1: 
+				recruit = ronDayne;
+				alert("You're 'crooting Ron Dayne!");
+				return recruit;
+			break;
+			
+			case 2:
+				recruit = russellWilson; 
+				alert("You're 'crooting Russell Wilson.");
+				return recruit;
+			break;
+
+			case 3:
+				recruit = monteeBall;
+				alert("You're 'crooting Montee Ball.");
+				return recruit;
+		 	break;
+
+			case 4: 
+				recruit = nickToon; 
+				alert("You're 'crooting Nick Toon.");
+				return recruit;
+			break;
+
+			case 5:
+				recruit = jackCichy;
+				alert("You're 'crooting Jack Cichy");
+				return recruit;
+				break;
+		
+			case 6:
+				recruit = billNagy; 
+				alert("You're 'crooting Bill Nagy");
+				return recruit;	
+			break;
+		}
+}
+
+// function runGame() {
+// 	let croot; 
+
+// 	getDistance(initialRolls)
+// 	getTalent(initialRolls)
+// 	console.log(initialRolls)
+// 	croot = getCroot()
+// 	console.log(croot)
+// }
+
+// runGame();
 
 let initialRolls = [];
+let croot = getCroot();
 
-
-function rollforDistance(){
-	let distanceRoll = Math.floor(Math.random() * 21) + 1;
-	return distanceRoll
+function rollDice(sidesOnDie) {
+	let roll = Math.floor(Math.random() * sidesOnDie) + 1;
+	console.log(roll);
+	return roll
 }
 
+function pitchPlaytime(){
+	let roll = rollDice(12);
+	let playtimeArray = [1,0,0,0,0];
+	let pitchEffect;
+	let finalResult = 0;
 
-function getDistance(initialRolls){
-	let distance;
-	let roll = rollforDistance()
-	if      (roll <= 2)
-	{ 
-				distance = homeGrown 
-					alert("Your 'croot is Home Grown!");
-	}
-	else if (roll = 3)
-	{
-				distance = regional
-					alert("Your 'croot is Regional!");
-	}
-	else(roll = 4)
-	{
-				distance = national
-					alert("Your 'croot is National!");
+	for(let i = 0; i < playtimeArray.length; i++) {
+		playtimeArray[i] *= roll;
+		playtimeArray[i] *= croot[i];
+		playtimeArray[i] += roll;
+		finalResult += playtimeArray[i];
+
 	}
 
-	initialRolls = initialRolls.push(distance);
-	return initialRolls;
+
+
 }
-getDistance()
+ // 
+pitchPlaytime()
