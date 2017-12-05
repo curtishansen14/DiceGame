@@ -1,6 +1,6 @@
 "use strict"
 
-let initialRolls = [];
+let crootPoints = [];
 let croot = getCroot()
 
 function rollDice(sidesOnDie) {
@@ -10,7 +10,7 @@ function rollDice(sidesOnDie) {
 }
 
 
-function getDistance(initialRolls){
+function getDistance(crootPoints){
 	let homeGrown = 12
 	let regional = 4
 	let national = 0
@@ -38,7 +38,7 @@ function getDistance(initialRolls){
 }
 
 
-function getTalent(initialRolls){
+function getTalent(crootPoints){
 	let FiveStar = 0
 	let FourStar = 5
 	let ThreeStar = 10
@@ -66,12 +66,12 @@ function getTalent(initialRolls){
 
 
 function getCroot(){ 
-	let ronDayne = [0,1.2,1.2,1.2,0]
-	let russellWilson = [1.2,0,1.2,0,1.2]
-	let monteeBall = [0,1.2,0,1.2,1.2]
-	let nickToon = [0,0,1.2,1.2, 1.2,]
-	let jackCichy = [1.2,0,0,1.2,1.2]
-	let billNagy = [1.2,0,0,1.2,1.2]
+	let ronDayne = [0,.2,.2,.2,0]
+	let russellWilson = [.2,0,.2,0,.2]
+	let monteeBall = [0,.2,0,.2,.2]
+	let nickToon = [0,0,.2,.2,.2,]
+	let jackCichy = [.2,0,0,.2,.2]
+	let billNagy = [.2,0,0,.2,.2]
 
 	let croot;
 
@@ -116,19 +116,7 @@ function getCroot(){
 		}
 }
 
-// function runGame() {
-// 	let croot; 
-
-// 	getDistance(initialRolls)
-// 	getTalent(initialRolls)
-// 	console.log(initialRolls)
-// 	croot = getCroot()
-// 	console.log(croot)
-// }
-
-// runGame();
-
-function pitchPlaytime(){
+function pitchPlaytime(crootPoints){
 	let roll = rollDice(12);
 	let playtimeArray = [1,0,0,0,0];
 	let playtimeResult = 0;
@@ -136,14 +124,14 @@ function pitchPlaytime(){
 	for(let i = 0; i < playtimeArray.length; i++) {
 		playtimeArray[i] *= roll;
 		playtimeArray[i] *= croot[i];
-		playtimeArray[i] += roll;
-		platimeResult += playtimeArray[i];
+		playtimeResult += playtimeArray[i];
 	}
-return playtimeResult
+	playtimeResult += roll
+ initialRolls.push(playtimeResult)
 }
 
 
-function pitchChampionships(){
+function pitchChampionships(crootPoints){
 	let roll = rollDice(12);
 	let championshipsArray = [0,1,0,0,0];
 	let championshipResult = 0;
@@ -151,13 +139,13 @@ function pitchChampionships(){
 	for(let i = 0; i < championshipsArray.length; i++) {
 		championshipsArray[i] *= roll;
 		championshipsArray[i] *= croot[i];
-		championshipsArray[i] += roll;
 		championshipsResult += championshipsArray[i];
 	}
-return championshipResult
+	championshipsResult+=roll
+	initialRolls.push(championshipsResult)
 }
 
-function pitchAcademics(){
+function pitchAcademics(crootPoints){
 	let roll = rollDice(10);
 	let academicsArray = [0,0,1,0,0];
 	let playtimeResult = 0;
@@ -165,13 +153,13 @@ function pitchAcademics(){
 	for(let i = 0; i < academicsArray.length; i++) {
 		academicsArray[i] *= roll;
 		academicsArray[i] *= croot[i];
-		academicsArray[i] += roll;
 		academicsResult += academicsArray[i];
 	}
-return academicsResult
+	academicsResult+=roll
+	initialRolls.push(academicsResult)
 }
 
-function pitchHistory(){
+function pitchHistory(crootPoints){
 	let roll = rollDice(10);
 	let historyArray = [0,0,0,1,0];
 	let historyResult = 0;
@@ -179,13 +167,13 @@ function pitchHistory(){
 	for(let i = 0; i < historyArray.length; i++) {
 		historyArray[i] *= roll;
 		historyArray[i] *= croot[i];
-		historyArray[i] += roll;
 		historyResult += historyArray[i];
 	}
-return historyResult
+	historyResult+=roll
+	initialRolls.push(historyResult)
 }
 
-function pitchCampus(){
+function pitchCampus(crootPoints){
 	let roll = rollDice(8);
 	let campusArray = [0,0,0,0,1];
 	let campusResult = 0;
@@ -193,8 +181,9 @@ function pitchCampus(){
 	for(let i = 0; i < campusArray.length; i++) {
 		campusArray[i] *= roll;
 		campusArray[i] *= croot[i];
-		campusArray[i] += roll;
 		campusResult += campusArray[i];
 	}
-return campusResult
+	campusResult+=roll
+	initialRolls.push(campusResult)
 }
+
