@@ -507,37 +507,43 @@ function getCroot(){
 			
 			case 1: 
 				croot = ronDayne;
-				;
+				document.getElementById("nameOfRecruit").style.display = "inline-block";
+				document.getElementById("nameOfRecruit").innerHTML = "Ron Dayne";
 				return croot;
 			break;
 			
 			case 2:
 				croot = russellWilson; 
-				;
+				document.getElementById("nameOfRecruit").style.display = "inline-block";
+				document.getElementById("nameOfRecruit").innerHTML = "Russell";
 				return croot;
 			break;
 
 			case 3:
 				croot = monteeBall;
-			
+				document.getElementById("nameOfRecruit").style.display = "inline-block";
+				document.getElementById("nameOfRecruit").innerHTML = "Montee";
 				return croot;
 		 	break;
 
 			case 4: 
-				croot = nickToon; 
-				
+				croot = nickToon;
+				document.getElementById("nameOfRecruit").style.display = "inline-block"; 
+				document.getElementById("nameOfRecruit").innerHTML = "Nick";
 				return croot;
 			break;
 
 			case 5:
 				croot = jackCichy;
-				
+				document.getElementById("nameOfRecruit").style.display = "inline-block";
+				document.getElementById("nameOfRecruit").innerHTML = "Jack";
 				return croot;
 				break;
 		
 			case 6:
-				croot = billNagy; 
-				
+				croot = billNagy;
+				document.getElementById("nameOfRecruit").style.display = "inline-block"; 
+				document.getElementById("nameOfRecruit").innerHTML = "Bill";
 				return croot;	
 			break;
 		}
@@ -559,3 +565,5 @@ function pitchPlaytime(initialRolls){
 }
 
 
+getDistance(initialRolls)
+getTalent(initialRolls)

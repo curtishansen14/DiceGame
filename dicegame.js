@@ -3,6 +3,8 @@
 let crootPoints = [];
 let croot = getCroot()
 
+console.log(crootPoints)
+
 function rollDice(sidesOnDie) {
 	let roll = Math.floor(Math.random() * sidesOnDie) + 1;
 	console.log(roll);
@@ -10,7 +12,7 @@ function rollDice(sidesOnDie) {
 }
 
 
-function getDistance(crootPoints){
+function getDistance(){
 	let homeGrown = 12
 	let regional = 4
 	let national = 0
@@ -18,7 +20,6 @@ function getDistance(crootPoints){
 
 	let distance;
 	let roll = rollDice(4)
-	console.log(roll)
 	if      (roll <= 2)
 	{ 
 				distance = homeGrown 
@@ -34,11 +35,11 @@ function getDistance(crootPoints){
 				distance = national
 					alert("Your 'croot is National!");
 	}
-	initialRolls.push(distance)
+	crootPoints.push(distance)
 }
 
 
-function getTalent(crootPoints){
+function getTalent(){
 	let FiveStar = 0
 	let FourStar = 5
 	let ThreeStar = 10
@@ -46,7 +47,6 @@ function getTalent(crootPoints){
 
 	let talent;
 	let roll = rollDice(20);
-	console.log(roll)
 	if      (roll >= 19)
 	{ 
 				talent = FiveStar;
@@ -61,7 +61,7 @@ function getTalent(crootPoints){
 				{talent = FourStar;
 				alert ("Your 'croot is 4 Star");
 			}
-		initialRolls.push(talent)
+		crootPoints.push(talent)
 		}
 
 
@@ -80,43 +80,49 @@ function getCroot(){
 			
 			case 1: 
 				croot = ronDayne;
-				alert("You're 'crooting Ron Dayne!");
+				alert("You're recruiting Ron Dayne");
+				//document.getElementById("nameOfRecruit").innerHTML = "You're 'Crootin' Ron Dayne";
 				return croot;
 			break;
 			
 			case 2:
 				croot = russellWilson; 
-				alert("You're 'crooting Russell Wilson.");
+				alert("You're recruiting Russell Wilson");
+				//document.getElementById("nameOfRecruit").innerHTML = "You're 'Crootin' Russell Wilson";
 				return croot;
 			break;
 
 			case 3:
 				croot = monteeBall;
-				alert("You're 'crooting Montee Ball.");
+				alert("You're recruiting Montee Ball");
+				//document.getElementById("nameOfRecruit").innerHTML = "You're 'Crootin Montee Ball";
 				return croot;
 		 	break;
 
 			case 4: 
 				croot = nickToon; 
-				alert("You're 'crooting Nick Toon.");
+				alert("You're recruiting Nick Toon");
+				//document.getElementById("nameOfRecruit").innerHTML = "You're 'Crootin Nick Toon";
 				return croot;
 			break;
 
 			case 5:
 				croot = jackCichy;
-				alert("You're 'crooting Jack Cichy");
+				alert("You're recruiting Jack Cichy");
+				//document.getElementById("nameOfRecruit").innerHTML = "You're 'Crootin' Jack Cichy";
 				return croot;
 				break;
 		
 			case 6:
 				croot = billNagy; 
-				alert("You're 'crooting Bill Nagy");
+				alert("You're recruiting Bill Nagy");
+				//document.getElementById("nameOfRecruit").innerHTML = "You're 'Crootin Bill Nagy";
 				return croot;	
 			break;
 		}
 }
 
-function pitchPlaytime(crootPoints){
+function pitchPlaytime(){
 	let roll = rollDice(12);
 	let playtimeArray = [1,0,0,0,0];
 	let playtimeResult = 0;
@@ -127,14 +133,14 @@ function pitchPlaytime(crootPoints){
 		playtimeResult += playtimeArray[i];
 	}
 	playtimeResult += roll
- initialRolls.push(playtimeResult)
+ crootPoints.push(playtimeResult)
 }
 
 
-function pitchChampionships(crootPoints){
+function pitchChampionships(){
 	let roll = rollDice(12);
 	let championshipsArray = [0,1,0,0,0];
-	let championshipResult = 0;
+	let championshipsResult = 0;
 
 	for(let i = 0; i < championshipsArray.length; i++) {
 		championshipsArray[i] *= roll;
@@ -142,13 +148,13 @@ function pitchChampionships(crootPoints){
 		championshipsResult += championshipsArray[i];
 	}
 	championshipsResult+=roll
-	initialRolls.push(championshipsResult)
+	crootPoints.push(championshipsResult)
 }
 
-function pitchAcademics(crootPoints){
+function pitchAcademics(){
 	let roll = rollDice(10);
 	let academicsArray = [0,0,1,0,0];
-	let playtimeResult = 0;
+	let academicsResult = 0;
 
 	for(let i = 0; i < academicsArray.length; i++) {
 		academicsArray[i] *= roll;
@@ -156,10 +162,10 @@ function pitchAcademics(crootPoints){
 		academicsResult += academicsArray[i];
 	}
 	academicsResult+=roll
-	initialRolls.push(academicsResult)
+	crootPoints.push(academicsResult)
 }
 
-function pitchHistory(crootPoints){
+function pitchHistory(){
 	let roll = rollDice(10);
 	let historyArray = [0,0,0,1,0];
 	let historyResult = 0;
@@ -170,10 +176,10 @@ function pitchHistory(crootPoints){
 		historyResult += historyArray[i];
 	}
 	historyResult+=roll
-	initialRolls.push(historyResult)
+	crootPoints.push(historyResult)
 }
 
-function pitchCampus(crootPoints){
+function pitchCampus(){
 	let roll = rollDice(8);
 	let campusArray = [0,0,0,0,1];
 	let campusResult = 0;
@@ -184,6 +190,28 @@ function pitchCampus(crootPoints){
 		campusResult += campusArray[i];
 	}
 	campusResult+=roll
-	initialRolls.push(campusResult)
+	crootPoints.push(campusResult)
 }
 
+
+
+function playGame(){
+	let croot = getCroot();
+	let talent = getTalent();
+	getDistance();
+	pitchChampionships(croot);
+	pitchPlaytime(croot);
+	pitchCampus(croot);
+	pitchHistory(croot);
+	pitchAcademics(croot);
+	console.log(crootPoints);
+
+	let result = crootPoints.reduce(function(total, el){
+	
+		return total + el;
+
+	});
+	console.log(result)	
+}
+
+playGame()
